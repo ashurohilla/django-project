@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hardware Garage </title>
+
+    <!-- Font Awesome Icons -->
+
+    <link rel="stylesheet" href=" {% static 'css\all.css' %} ">
+
+    <!------------ Owl-Carousel -------------->
+
+    <link rel="stylesheet" href=" {% static 'css/owl.carousel.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/owl.default.theme.css ' %} ">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static 'css/aos.css' %} ">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}">
+
+</head>
+
+<body>
+
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Hardware Garage</a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{% url 'project' %} ">Projects</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{% url 'comunity' %}">community</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{% url 'mainblog' %}">Blogs</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{% url 'Contact' %}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/hardware.garage?utm_medium=copy_link"target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/hardware_garage"target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCYielOL3FXyFFkLXZ6c-vyA" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </nav>

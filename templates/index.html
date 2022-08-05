@@ -1,0 +1,138 @@
+{% extends 'templates/base.html' %} {% load static %}
+<!----------------------------- Main Site Section ------------------------------>
+{% block content %}
+
+<!------------------------ Site Title ---------------------->
+<main>
+    <section class="site-title">
+        <div class="site-background" data-aos="fade-left" data-aos-delay="100">
+            <h3>Hardware and software</h3>
+            <h1>Amazing Place to learn hardware</h1>
+            <a href="{% url 'mainblog' %}"><button class="btn">Explore</button></a>
+        </div>
+    </section>
+
+    <!------------x----------- Site Title ----------x---------->
+
+    <section>
+        <div class="blog">
+            <div class="container">
+                <div class="owl-carousel owl-theme blog-post">
+                    <!-----------------this should be in loop-----------------7-->
+                    {% for i in bannerdata %}
+                    <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
+                        <img src="{{i.banner_image.url}}" alt="post-1" />
+                        <div class="blog-title">
+                            <h3>{{i.bannerheading}}</h3>
+                            <a href="/Learn/{{i.id}}"><button class="btn btn-blog">Explore</button></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="owl-navigation">
+            <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+            <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+        </div>
+
+    </section>
+
+
+    <!-- ----------x---------- Blog Carousel --------x-------- -->
+
+    <!-- ---------------------- Site Content -------------------------->
+
+    <section class="container">
+        <div class="site-content">
+            <div class="posts">
+                {% for n in blogsdata %}
+                <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="post-image">
+                        <div>
+                            <img src="{{n.blog_image.url}}" class="img" alt="blog1" />
+                        </div>
+                        <div class="post-info flex-row">
+                            <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                            <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;</span>{{n.blog_date }}
+                        </div>
+                    </div>
+                    <div class="post-title">
+                        <a href="/Blogs/{{n.id}}">{{n.blog_heading}}</a>
+
+                        <p class="post-title">{{n.blog_half | safe }}</p>
+                        <a href="/Blogs/{{n.id}}">
+                            <button class="btn post-btn">
+                                Read More &nbsp; <i class="fas fa-arrow-right"></i></button></a>
+                    </div>
+                </div>
+                <hr />
+                {% endfor %}
+
+                <!-------shortblog---------------->
+                <div class="pagination flex-row">
+                    <a href="#"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="pages">1</a>
+                    <a href="#" class="pages">2</a>
+                    <a href="#" class="pages">3</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <div class="category">
+                    <h2>Category</h2>
+                    <ul class="category-list">
+                        <!------------this should be in loop---------->
+
+                        {% for n in blogcatogry %}
+                        <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                            <a href="">{{n.catogry_head}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="popular-post">
+                    <h2>Popular Post</h2>
+
+                    {% for n in blogsidedata %}
+                    <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="/{{n.blog_image}}" class="img" alt="blog1" />
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;{{blog_date}}</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="/Blogs/{{n.id}}">{{n.blog_heading}}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                    <h2>Newsletter</h2>
+                    <div class="form-element">
+                        <input type="text" class="input-element" placeholder="Email" />
+                        <button class="btn form-btn">Subscribe</button>
+                    </div>
+                </div>
+                <div class="popular-tags">
+                    <h2>Popular Tags</h2>
+                    <div class="tags flex-row">
+                        <span class="tag" data-aos="flip-up" data-aos-delay="100">Software</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="200">technology</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="300">travel</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="400">illustration</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="500">design</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="600">lifestyle</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="700">love</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="800">project</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+    <!-- -----------x---------- Site Content -------------x------------>
+</main>
+{% endblock %}

@@ -1,0 +1,73 @@
+
+<!-- --------------------------- Footer ---------------------------------------- -->
+{% load static %}
+
+    <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>About us</h2>
+                <p>inovating things and making projects</p>
+            </div>
+            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                <h2>Newsletter</h2>
+                <p>Stay update with our latest</p>
+                <div class="form-element">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input  name="value"  type="text" placeholder="enter your email" ><button type ="submit" ><i class="fas fa-chevron-right"></i></button>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Instagram</h2>
+                <div class="flex-row">
+                    <img src="{% static 'images/instagram1.jfif' %}" alt="insta1">
+                    <img src="{% static 'images/instagram2.jfif' %}" alt="insta2">
+                    <img src="{% static 'images/instagram3.jfif' %}" alt="insta3">
+                </div>
+                <div class="flex-row">
+                    <img src="{% static 'images/instagram4.jpg' %}" alt="insta4">
+                    <img src="{% static 'images/hardwaregarage2.jpg' %}" alt="insta5">
+                    <img src="{% static 'images/hardwaregarage1.jpg' %}" alt="insta6">
+                </div>
+            </div>
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Follow us</h2>
+                <p>Let us be Social</p>
+                <div>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+        <div class="rights flex-row">
+            <h4 class="text-gray">
+                Copyright ©2021All rights reserved | made by
+                <a href="https://www.youtube.com/channel/UCYielOL3FXyFFkLXZ6c-vyA" target="_blank">Hardware Garage<i class="fab fa-youtube"></i>
+                    Channel</a>
+            </h4>
+        </div>
+        <div class="move-up">
+            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+    </footer>
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- --------- Owl-Carousel js ------------------>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="{% static 'js/aos.js' %}"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html> 
