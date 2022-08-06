@@ -144,16 +144,7 @@ MEDIA_ROOT =os.path.join(BASE_DIR,'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
-AWS_ACCESS_KEY_ID = 'AKIAXGLGJDRCINDEKEOB'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'hardware-garage'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = 'public-read'
-AWS_LOCATION = 'static'
-AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400',}
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
 
 STATICFILES_DIRS = (
    os.path.join(BASE_DIR, "static"),
